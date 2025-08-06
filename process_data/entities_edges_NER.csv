@@ -1,0 +1,205 @@
+Entity1,Entity2
+Core Statistics & Probability,Section 1
+MCMC,Markov Chain Monte Carlo
+L2,Combines L1
+NLP,Model Interpretability
+ML,AI
+ML,Section 6
+ML,Spark
+ML,Google Cloud
+ML,Vertex AI
+ML,Azure ML
+ML,MLOps
+AI,Advanced Topics — Ethical AI & Fairness
+AI,Section 8
+AI,Data Safety
+AI,EU
+AI,GDPR
+AI,CCPA
+AI,AI Act
+AI,NIST AI Risk Management Framework
+AI,ISO/IEC 27001
+AI,AI Bill of Rights
+AI,“Cookie Law
+AI,USA
+AI,Data Governance Act
+AI,EU AI Liability
+AI,HIPAA
+AI,Fair Credit Reporting Act
+AI,FCRA
+AI,Apache Spark
+AI,Google Cloud
+AI,Vertex AI
+AI,Section 8)
+AI,PoC
+AI,AI/ML
+AI,ICT
+AI,quantum computing
+AI,5
+AI,Section 18
+AI,Network Technologies and Systems
+Section 3,Python
+Section 3,SQL
+Section 3,Q&A
+Python,SQL
+Python,IQR
+SQL,DataFrames
+SQL,Q&A
+SQL,Section 4
+SQL,Data Analysis & Business Understanding
+SQL,Presto/Trino
+DataFrames,Pandas
+Pandas,pd.merge(df1
+Pandas,aggfunc='sum
+Pandas,Series
+Pandas,df['total
+IQR,Q3
+IQR,Q3 - Q1
+Q3,Q3 - Q1
+Section 4,Data Analysis & Business Understanding
+Section 4,BI
+ARPU,LTV
+ARPU,CAC
+LTV,CAC
+LTV,CLV
+NPS,CSAT
+NPS,CES
+CSAT,CES
+Section 5,MapReduce
+Section 5,MLOps
+Section 5,Big Data
+Section 5,KPI
+Section 5,Cloud
+MapReduce,MLOps
+MapReduce,Big Data
+MapReduce,Hadoop
+MapReduce,Apache Hadoop
+MLOps,Big Data
+MLOps,Continuous Integration/Continuous Deployment
+MLOps,KPI
+MLOps,Cloud
+MLOps,ICT
+Big Data,KPI
+Big Data,Cloud
+Hadoop,Section 6
+Hadoop,Spark
+AWS S3,AWS
+AWS,Amazon Redshift
+AWS,SageMaker
+KPI,Cloud
+KPI,Section 12
+KPI,Fast Prototyping
+Section 6,CI
+Section 6,Spark
+CI,Spark
+CI,ICT
+Section 8,Data Safety
+EU,GDPR
+EU,Section 9
+EU,USA
+EU,AI Act
+EU,a Data Protection
+EU,Data Governance Act
+EU,Digital Markets Act
+EU,NIS2
+EU,Gramm-Leach-Bliley Act
+GDPR,Section 9
+GDPR,CCPA
+GDPR,California
+GDPR,ENISA
+GDPR,EU AI Liability
+GDPR,Gramm-Leach-Bliley Act
+CCPA,California
+CCPA,CPRA
+Section 9,USA
+USA,FISMA
+USA,SOC
+USA,AI Bill of Rights
+USA,“Cookie Law
+USA,Privacy Act
+USA,Fair Credit Reporting Act
+USA,FCRA
+California,CPRA
+HIPAA,California Privacy Rights Act
+HIPAA,EU AI Liability
+ISO/IEC 27001,Data Technologies
+ISO/IEC 27001,Section 10
+ISO/IEC 27001,ITIL
+ISO/IEC 27001,ICT
+a Data Protection,EU-USA Privacy Shield
+Federal Information Security Management Act,SOC
+EU Digital Services Act,DSA
+AI Bill of Rights,“Cookie Law
+Cybersecurity,EU Agency
+Fair Credit Reporting Act,FCRA
+EU-USA,EDPB
+EDPB,Schrems
+Data Technologies,Section 10
+Data Technologies,Privacy Information Management Systems
+Section 10,Privacy Information Management Systems
+Power BI,BI
+Power BI,Microsoft
+Power BI,"Dash, Tableau"
+BI,Microsoft
+Apache Druid,OLAP
+OLAP,OLTP
+DataRobot,AutoML
+Google Cloud,Vertex AI
+Azure ML,Microsoft Azure’s
+Section 11,Data Visualization
+Section 12,Fast Prototyping
+PoC,AI/ML
+Data Science,ICT
+Data Science,Section 13
+ICT,Section 13
+ICT,IEEE
+ICT,ITIL
+ICT,quantum computing
+ICT,5
+ICT,IoT
+ICT,FTP
+ICT,HTTPS
+ICT,TCP/IP
+ICT,MQTT
+ICT,WebSocket
+ICT,ERP
+Slack,Microsoft Teams
+IEEE,ITIL
+quantum computing,5
+5,IoT
+IaaS,PaaS (Platform as a Service
+IoT,MQTT
+IoT,Zigbee
+IoT,Bluetooth Low Energy
+IoT,LoRaWAN
+FTP,HTTPS
+FTP,TCP/IP
+FTP,MQTT
+FTP,WebSocket
+HTTPS,TCP/IP
+HTTPS,MQTT
+HTTPS,WebSocket
+TCP/IP,MQTT
+TCP/IP,WebSocket
+TCP/IP,HTTP
+TCP/IP,SNMP
+MQTT,WebSocket
+MQTT,Zigbee
+MQTT,LoRaWAN
+Master Data Science Interview Question Bank with Answers,Section 14
+Section 15,Computer Systems
+CPU,Central Processing Unit
+LAN,WAN
+LAN,PAN
+LAN,VLAN
+Section 16,Communication Technologies and Systems
+OSI,"Network, Transport, Session"
+Zigbee,Bluetooth Low Energy
+Zigbee,LoRaWAN
+Bluetooth Low Energy,LoRaWAN
+IP,DNS
+UC,Unified Communications
+Quality of Service,QoS
+Section 17,Information Technologies and Systems
+CRM,Enterprise Resource Planning
+Section 18,Network Technologies and Systems
