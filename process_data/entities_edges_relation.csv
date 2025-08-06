@@ -1,0 +1,185 @@
+Entity1,Relation,Entity2
+Markov Chain Monte Carlo,is_a,MCMC
+Breusch-Pagan,uses,White
+Combines L1,is_a,L2
+NLP,co_occurs,Model Interpretability
+API,is_a,ML
+ML,co_occurs,AI
+ML,co_occurs,Section 6
+ML,co_occurs,Google Cloud
+ML,co_occurs,Vertex AI
+AI,co_occurs,Advanced Topics — Ethical AI & Fairness
+AI,co_occurs,GDPR
+AI,co_occurs,CCPA
+AI,co_occurs,ISO/IEC 27001
+AI,co_occurs,EU
+AI,co_occurs,Data Governance Act
+AI,co_occurs,USA
+AI,co_occurs,ML
+AI,co_occurs,Google Cloud
+AI,co_occurs,Vertex AI
+AI,co_occurs,PoC
+AI,co_occurs,ICT
+16,uses,32
+SQL,co_occurs,DataFrames
+SQL,co_occurs,Data Analysis & Business Understanding
+SQL,co_occurs,Section 4
+SQL,co_occurs,Presto/Trino
+pd.merge(df1,co_occurs,Pandas
+Pandas,co_occurs,Series
+Pandas,co_occurs,aggfunc='sum
+aggfunc='sum,co_occurs,Pandas
+Q3,co_occurs,IQR
+Q3,co_occurs,Q3 - Q1
+Python,co_occurs,IQR
+df['total,co_occurs,Pandas
+NPS,uses,NPS
+NPS,co_occurs,CSAT
+CES,co_occurs,CSAT
+Section 5,is_a,Big Data
+Section 5,is_a,MLOps
+Section 5,is_a,MapReduce
+Section 5,co_occurs,KPI
+Big Data,is_a,MLOps
+Big Data,is_a,MapReduce
+Big Data,co_occurs,KPI
+MLOps,co_occurs,Big Data
+MLOps,co_occurs,Continuous Integration/Continuous Deployment
+MLOps,co_occurs,Section 5
+MLOps,co_occurs,KPI
+MLOps,co_occurs,Cloud
+MLOps,co_occurs,ML
+MapReduce,co_occurs,MLOps
+Hadoop,is_a,MapReduce
+Hadoop,co_occurs,Section 6
+ETL,co_occurs,ELT
+AWS,co_occurs,AWS S3
+AWS,co_occurs,Amazon Redshift
+Section 3,co_occurs,Q&A
+Q&A,co_occurs,SQL
+Section 4,co_occurs,BI
+KPI,co_occurs,Cloud
+KPI,co_occurs,Section 5
+Section 6,co_occurs,CI
+Spark,co_occurs,Section 6
+CI,co_occurs,ICT
+Section 8,co_occurs,AI
+Data Safety,co_occurs,AI
+EU,co_occurs,AI
+EU,co_occurs,GDPR
+EU,is_a,USA
+EU,co_occurs,a Data Protection
+GDPR,co_occurs,EU
+GDPR,is_a,CCPA
+GDPR,co_occurs,AI
+GDPR,co_occurs,California
+GDPR,co_occurs,EU AI Liability
+GDPR,co_occurs,HIPAA
+Section 9,is_a,EU
+Section 9,is_a,USA
+Section 9,is_a,GDPR
+USA,co_occurs,AI
+USA,co_occurs,Privacy Act
+CPRA,is_a,CCPA
+California,co_occurs,CCPA
+HIPAA,co_occurs,California Privacy Rights Act
+HIPAA,co_occurs,AI
+AI Act,is_a,EU
+AI Act,co_occurs,AI
+NIST AI Risk Management Framework,co_occurs,AI
+ISO/IEC 27001,co_occurs,Data Technologies
+ISO/IEC 27001,co_occurs,ICT
+EU-USA Privacy Shield,co_occurs,a Data Protection
+FISMA,is_a,USA
+SOC,is_a,2
+SOC,co_occurs,USA
+SOC,co_occurs,Federal Information Security Management Act
+EU Digital Services Act,is_a,DSA
+AI Bill of Rights,is_a,USA
+AI Bill of Rights,co_occurs,AI
+“Cookie Law,co_occurs,USA
+“Cookie Law,co_occurs,AI Bill of Rights
+“Cookie Law,co_occurs,AI
+Data Governance Act,is_a,EU
+Digital Markets Act,is_a,EU
+Privacy Act,is_a,1974
+NIS2,is_a,EU
+ENISA,co_occurs,GDPR
+EU AI Liability,co_occurs,HIPAA
+EU AI Liability,co_occurs,AI
+Fair Credit Reporting Act,is_a,FCRA
+Fair Credit Reporting Act,is_a,USA
+Fair Credit Reporting Act,co_occurs,AI
+FCRA,is_a,USA
+FCRA,co_occurs,AI
+EDPB,is_a,EDPB
+EDPB,co_occurs,Schrems
+EDPB,co_occurs,EU-USA
+Gramm-Leach-Bliley Act,co_occurs,EU
+Gramm-Leach-Bliley Act,co_occurs,GDPR
+Section 10,co_occurs,ISO/IEC 27001
+Section 10,co_occurs,Privacy Information Management Systems
+Data Technologies,co_occurs,Privacy Information Management Systems
+Apache Hadoop,co_occurs,MapReduce
+BI,co_occurs,Power BI
+Power BI,co_occurs,Microsoft
+OLAP,co_occurs,Apache Druid
+DataRobot,co_occurs,AutoML
+AutoML,co_occurs,AI
+Google Cloud’s,regulates,ML
+Google Cloud,co_occurs,Vertex AI
+SageMaker,co_occurs,AWS
+Azure ML,co_occurs,ML
+Azure ML,co_occurs,Microsoft Azure’s
+OLTP,is_a,OLAP
+Section 11,is_a,Data Visualization
+days,uses,weeks
+days,uses,months
+weeks,uses,months
+Section 8),co_occurs,AI
+Section 12,co_occurs,KPI
+Fast Prototyping,co_occurs,KPI
+AI/ML,co_occurs,AI
+AI/ML,co_occurs,PoC
+ICT,co_occurs,MLOps
+ICT,co_occurs,IEEE
+ICT,co_occurs,AI
+ICT,co_occurs,IoT
+ICT,co_occurs,5
+ICT,co_occurs,FTP
+ICT,co_occurs,MQTT
+ICT,co_occurs,ERP
+ITIL,co_occurs,ICT
+5,uses,quantum computing
+5,co_occurs,ICT
+5,co_occurs,AI
+5,co_occurs,IoT
+quantum computing,co_occurs,ICT
+quantum computing,co_occurs,AI
+IaaS,is_a,PaaS (Platform as a Service
+IoT,co_occurs,ICT
+IoT,co_occurs,Bluetooth Low Energy
+IoT,co_occurs,Zigbee
+TCP/IP,co_occurs,HTTPS
+TCP/IP,co_occurs,ICT
+TCP/IP,co_occurs,SNMP
+HTTPS,co_occurs,WebSocket
+HTTPS,co_occurs,ICT
+HTTPS,co_occurs,FTP
+HTTPS,co_occurs,MQTT
+WebSocket,co_occurs,ICT
+MQTT,co_occurs,IoT
+Section 15,part_of,Computer Systems
+Central Processing Unit,part_of,CPU
+LAN,is_a,WAN
+LAN,co_occurs,VLAN
+"Network, Transport, Session",co_occurs,OSI
+LoRaWAN,co_occurs,IoT
+DNS,co_occurs,IP
+Unified Communications,is_a,UC
+Quality of Service,is_a,QoS
+Section 17,is_a,Information Technologies and Systems
+CRM,co_occurs,Enterprise Resource Planning
+Section 18,co_occurs,AI
+Network Technologies and Systems,co_occurs,AI
+HTTP,co_occurs,TCP/IP
