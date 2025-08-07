@@ -1,0 +1,5 @@
+@prefix ex: <http://example.org/> .
+
+ex:Marie_Curie ex:discovered ex:radium ;
+    ex:won ex:Nobel_Prize .
+
