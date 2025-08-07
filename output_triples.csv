@@ -1,0 +1,180 @@
+Subject,Predicate,Object
+Report,is about,Building X
+Report,covers,Risk analysis
+Risk analysis,is of,Building X
+Report,covers,Fire scenarios in Building X
+Fire scenarios,can happen during,Normal operation of Building X
+Building X,is,A high-rise building
+Building X,is planned for,Apartments
+Building X,is planned for,A shopping centre
+Building X,is built for,Apartments
+Building X,is built for,A shopping centre
+Building X,has,Three sections
+Building X,has,Residential section
+Building X,has,Shopping section
+Building X,has,Garage section
+Analysis,is divided into,Different sections for Building X
+One part of the analysis,involves,A general risk analysis of Building X
+A specific risk analysis,is conducted for,Residential part of Building X
+A specific risk analysis,is conducted for,Shopping part of Building X
+A specific risk analysis,is conducted for,Garage part of Building X
+Building X,is located at,ABC
+Building X,has,10 floors
+Building X,has,8 floors above ground level
+Building X,has,2 floors below ground level
+Floors,are,Below ground level
+Floors,are,Garages
+Building X,has,Residential parts
+Building X,has,Shopping parts
+Residential parts of Building X,are,Above ground level
+Shopping parts of Building X,are,Above ground level
+Building X,has height,25 meters
+Building X,has length,30 meters
+Building X,has width,5 meters
+Building X,has,Varying number of people in different parts
+Population in Building X,is,Not constant
+Different parts of Building X,have,Different population densities
+Details,are presented for,Each part of Building X
+Each part of Building X,has,A corresponding section
+Different parts of Building X,have,Different materials
+Materials,can contribute to,Fire in Building X
+Building X,has,Details
+Details for Building X,are presented in,Corresponding sections
+Building X,has,Parts
+Each part of Building X,has,A corresponding section for its detail
+Building X,has,Emergency Access Roads
+Building X,is located,1300 m from firefighting brigade
+Emergency units,need,Approximately 10 minutes to reach Building X in case of fire
+An area for emergency vehicles to stop,is present,In front of Building X
+Building X,has,Emergency paths
+Building's emergency paths,include,Main vertical staircases
+Main vertical staircases,span,From the lowest to the highest floor of Building X
+Each floor,has,A path
+Path,is for,Evacuation
+Details,are presented for,Each part of Building X
+Details,are presented in,Corresponding sections
+Safety measures,are detailed for,Each part of Building X
+Safety systems,are described in,Subsequent sections
+Building X,has,A network of hydrants
+Network of hydrants,covers,Entire Building X
+Building X,has,A residential part
+Residential part of Building X,has,Occupants
+Density of the occupants in the residential part of Building X,is,0.01 person/m2
+Analysis,is provided for,Residential part of Building X
+Materials,are present in,Residential part of Building X
+Materials,can contribute to,Firepower
+Building X,has,Material fire risk level of 3
+Building X,has,Residential parts
+Building X,has,Emergency Access Roads
+Emergency Access Roads,provide access,To emergency units from the residential part of Building X
+Building X,has,Walkways on each floor
+Building X,has,Vertical staircases
+Walkways,provide access,To Emergency Access Roads from the residential part of Building X
+Vertical staircases,provide access,To Emergency Access Roads from the residential part of Building X
+Building X,has,Residential part
+Residential part of Building X,has,Emergency unit
+Emergency unit in residential part of Building X,has,Walkway
+Walkway in emergency unit of Building X,has length,55 m
+Firefighters,stop vehicles at,Certain location on the walkway
+Firefighters,continue on foot to,Location of fire from certain location
+Walkway,connects,Parking location of firefighters to fire location in residential part of Building X
+Building X,has,General emergency paths
+Main vertical staircases in Building X,serve as,General emergency paths
+Main vertical staircases in Building X,begin at,Lowest floor
+Main vertical staircases in Building X,end at,Highest floor
+Each floor,has,A path
+Each path,is,An evacuation path
+Building X,has,Multiple parts
+Each part of Building X,has,Corresponding sections
+Details,are presented in,These sections for each part of Building X
+Building X,has,A residential part
+Residential part of Building X,requires,Safety systems
+Safety systems for the residential part of Building X,include,Fire detection
+Safety systems for the residential part of Building X,include,Hand fire extinguishers
+Safety systems for the residential part of Building X,include,Hydrants for firefighters
+Residential part of Building X,has,An emergency path
+Emergency path in the residential part of Building X,is,1 m wide
+Building X,has,A shopping part
+An analysis,was conducted for,Shopping part of Building X
+Analysis of the shopping part of Building X,includes,Number of people
+Occupant density in the shopping part of Building X,is,0.1 person/m2
+Materials,are present in,Shopping part of Building X
+Materials,can contribute to,Firepower
+Building X,has,Section called shopping part
+Section called shopping part,is part of,Building X
+Shopping part of Building X,has,Material fire risk level
+Material fire risk level of shopping part of Building X,is,5
+Building X,has,Emergency units
+Building X,has,Residential part
+Walkways,provide access to,Emergency units
+Walkways,provide access from,Residential part of Building X
+Walkways,are located on,Each floor of Building X
+Vertical staircases,provide access to,Emergency units
+Vertical staircases,provide access from,Residential part of Building X
+Building X,has,Vertical staircases
+Building X,has,Emergency unit
+Emergency unit in Building X,has,Walkway
+Walkway in the emergency unit of Building X,has length,35 m
+Firefighters,stop vehicles,Close to the walkway
+Firefighters,continue on foot,From the stop point to the location of the fire
+Walkway,provides access from,Stop point to the location of the fire
+Building X,has,General emergency paths
+Building X,provides,General emergency paths
+Building X,includes,Main vertical staircases in general emergency paths
+Main vertical staircases,extend from,Lowest floor
+Main vertical staircases,extend to,Highest floor
+Each floor,has,An evacuation path
+An evacuation path,is on,A floor
+Details,are presented in,Sections for Building X
+Building X,has,A shopping part
+Building X,has safety measures for,Shopping part
+Safety measures for the shopping part of Building X,include,Fire detection
+Safety measures for the shopping part of Building X,include,Hand fire extinguishers
+Safety measures for the shopping part of Building X,include,Fixed active fire extinguishers
+Safety measures for the shopping part of Building X,include,Hydrants for firefighters
+Emergency path in the shopping part of Building X,is,2 m wide
+Building X,has,A garage part
+Garage part of Building X,has been,Analyzed
+Density of the occupants in the garage part of Building X,is,0.05 person/m2
+Materials,are present in,Garage part of Building X
+Materials in the garage part of Building X,contribute to,Firepower
+Contribution of the materials in the garage part of Building X,is,Significant to firepower
+Building X,has,A garage
+Garage,is a part of,Building X
+Garage,has,A material fire risk level
+Material fire risk level in the garage,is,4
+Building X,has,Emergency units
+Building X,has,Residential part
+Walkways,provide access from,Residential part of Building X
+Walkways,provide access to,Emergency units
+Building X,has,Walkways
+Each floor of Building X,has,Walkways
+Vertical staircases,provide access from,Residential part of Building X
+Vertical staircases,provide access to,Emergency units
+Building X,has,A garage
+Garage in Building X,has,An emergency unit
+Emergency unit in the garage of Building X,has,A walkway
+Walkway for the emergency unit in the garage of Building X,has length,45 m
+Firefighters,stop vehicles,At the start of the walkway in the emergency unit of the garage in Building X
+Firefighters,continue on foot,From the start of the walkway to the location of the fire in Building X
+Building X,has,General emergency paths
+Main vertical staircases,serve as,Emergency paths in Building X
+Main vertical staircases,stretch from,Lowest floor
+Main vertical staircases,stretch to,Highest floor in Building X
+Each floor,has,A path
+Path,is for,Evacuation
+Building X,has,Sections
+Sections,correspond to,Different parts
+Garage part of Building X,has,Specific safety measures
+Safety measures,include,Fire detection
+Safety measures,include,Hand fire extinguishers
+Safety measures,include,Fixed active fire extinguishers
+Safety measures,include,Hydrants for firefighters
+Safety measures,include,Mechanical ventilation
+Garage part of Building X,has,An emergency path
+Emergency path in the garage part of Building X,is,1.5 m wide
+Building X,is compliant with,Safety requirements
+Building X,has,Safety measures for fire scenarios
+Fire safety measures in Building X,allow for,Detection of fire
+Fire safety measures in Building X,allow for,Safe evacuation of occupants during a fire
+Fire safety measures in Building X,allow for,Quick access and action by emergency units
