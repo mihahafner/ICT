@@ -1,0 +1,226 @@
+@prefix ex: <http://example.org/> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+
+ex:A_specific_risk_analysis ex:is_conducted_for "Garage part of Building X",
+        "Residential part of Building X",
+        "Shopping part of Building X" .
+
+ex:An_analysis ex:was_conducted_for "Shopping part of Building X" .
+
+ex:An_area_for_emergency_vehicles_to_stop ex:is_present "In front of Building X" .
+
+ex:An_evacuation_path ex:is_on "A floor" .
+
+ex:Analysis ex:is_divided_into "Different sections for Building X" ;
+    ex:is_provided_for "Residential part of Building X" .
+
+ex:Analysis_of_the_shopping_part_of_Building_X ex:includes "Number of people" .
+
+<http://example.org/Building's_emergency_paths> ex:include "Main vertical staircases" .
+
+ex:Building_X ex:has wd:Q3986596,
+        wd:Q45085932,
+        "10 floors",
+        "2 floors below ground level",
+        "8 floors above ground level",
+        "A garage",
+        "A garage part",
+        "A network of hydrants",
+        "A residential part",
+        "A shopping part",
+        "Emergency Access Roads",
+        "Emergency paths",
+        "Emergency unit",
+        "Emergency units",
+        "Garage section",
+        "General emergency paths",
+        "Material fire risk level of 3",
+        "Multiple parts",
+        "Residential part",
+        "Residential parts",
+        "Residential section",
+        "Safety measures for fire scenarios",
+        "Section called shopping part",
+        "Sections",
+        "Shopping parts",
+        "Shopping section",
+        "Three sections",
+        "Varying number of people in different parts",
+        "Vertical staircases",
+        "Walkways",
+        "Walkways on each floor" ;
+    ex:has_height "25 meters" ;
+    ex:has_length "30 meters" ;
+    ex:has_safety_measures_for "Shopping part" ;
+    ex:has_width "5 meters" ;
+    ex:includes "Main vertical staircases in general emergency paths" ;
+    ex:is "A high-rise building" ;
+    ex:is_built_for wd:Q127386783,
+        "A shopping centre" ;
+    ex:is_compliant_with "Safety requirements" ;
+    ex:is_located "1300 m from firefighting brigade" ;
+    ex:is_located_at wd:Q169889 ;
+    ex:is_planned_for wd:Q127386783,
+        "A shopping centre" ;
+    ex:provides "General emergency paths" .
+
+ex:Contribution_of_the_materials_in_the_garage_part_of_Building_X ex:is "Significant to firepower" .
+
+ex:Density_of_the_occupants_in_the_garage_part_of_Building_X ex:is "0.05 person/m2" .
+
+ex:Density_of_the_occupants_in_the_residential_part_of_Building_X ex:is "0.01 person/m2" .
+
+ex:Details ex:are_presented_for "Each part of Building X" ;
+    ex:are_presented_in "Corresponding sections",
+        "Sections for Building X",
+        "These sections for each part of Building X" .
+
+ex:Details_for_Building_X ex:are_presented_in "Corresponding sections" .
+
+ex:Different_parts_of_Building_X ex:have "Different materials",
+        "Different population densities" .
+
+ex:Each_floor ex:has "A path",
+        "An evacuation path" .
+
+ex:Each_floor_of_Building_X ex:has "Walkways" .
+
+ex:Each_part_of_Building_X ex:has "A corresponding section",
+        "A corresponding section for its detail",
+        "Corresponding sections" .
+
+ex:Each_path ex:is "An evacuation path" .
+
+ex:Emergency_Access_Roads ex:provide_access "To emergency units from the residential part of Building X" .
+
+ex:Emergency_path_in_the_garage_part_of_Building_X ex:is "1.5 m wide" .
+
+ex:Emergency_path_in_the_residential_part_of_Building_X ex:is "1 m wide" .
+
+ex:Emergency_path_in_the_shopping_part_of_Building_X ex:is "2 m wide" .
+
+ex:Emergency_unit_in_Building_X ex:has "Walkway" .
+
+ex:Emergency_unit_in_residential_part_of_Building_X ex:has wd:Q13634881 .
+
+ex:Emergency_unit_in_the_garage_of_Building_X ex:has "A walkway" .
+
+ex:Emergency_units ex:need "Approximately 10 minutes to reach Building X in case of fire" .
+
+ex:Fire_safety_measures_in_Building_X ex:allow_for "Detection of fire",
+        "Quick access and action by emergency units",
+        "Safe evacuation of occupants during a fire" .
+
+ex:Fire_scenarios ex:can_happen_during "Normal operation of Building X" .
+
+ex:Firefighters ex:continue_on_foot "From the start of the walkway to the location of the fire in Building X",
+        "From the stop point to the location of the fire" ;
+    ex:continue_on_foot_to "Location of fire from certain location" ;
+    ex:stop_vehicles "At the start of the walkway in the emergency unit of the garage in Building X",
+        "Close to the walkway" ;
+    ex:stop_vehicles_at "Certain location on the walkway" .
+
+ex:Floors ex:are wd:Q114537922,
+        "Below ground level" .
+
+ex:Garage ex:has "A material fire risk level" ;
+    ex:is_a_part_of "Building X" .
+
+ex:Garage_in_Building_X ex:has "An emergency unit" .
+
+ex:Garage_part_of_Building_X ex:has "An emergency path",
+        "Specific safety measures" ;
+    ex:has_been "Analyzed" .
+
+ex:Main_vertical_staircases ex:extend_from "Lowest floor" ;
+    ex:extend_to "Highest floor" ;
+    ex:serve_as "Emergency paths in Building X" ;
+    ex:span "From the lowest to the highest floor of Building X" ;
+    ex:stretch_from "Lowest floor" ;
+    ex:stretch_to "Highest floor in Building X" .
+
+ex:Main_vertical_staircases_in_Building_X ex:begin_at "Lowest floor" ;
+    ex:end_at "Highest floor" ;
+    ex:serve_as "General emergency paths" .
+
+ex:Material_fire_risk_level_in_the_garage ex:is "4" .
+
+ex:Material_fire_risk_level_of_shopping_part_of_Building_X ex:is "5" .
+
+ex:Materials ex:are_present_in "Garage part of Building X",
+        "Residential part of Building X",
+        "Shopping part of Building X" ;
+    ex:can_contribute_to wd:Q5451924,
+        "Fire in Building X",
+        "Firepower" .
+
+ex:Materials_in_the_garage_part_of_Building_X ex:contribute_to "Firepower" .
+
+ex:Network_of_hydrants ex:covers "Entire Building X" .
+
+ex:Occupant_density_in_the_shopping_part_of_Building_X ex:is "0.1 person/m2" .
+
+ex:One_part_of_the_analysis ex:involves "A general risk analysis of Building X" .
+
+ex:Path ex:is_for wd:Q606332,
+        "Evacuation" .
+
+ex:Population_in_Building_X ex:is "Not constant" .
+
+ex:Report ex:covers "Fire scenarios in Building X",
+        "Risk analysis" ;
+    ex:is_about "Building X" .
+
+ex:Residential_part_of_Building_X ex:has wd:Q50568274,
+        "An emergency path",
+        "Emergency unit" ;
+    ex:requires "Safety systems" .
+
+ex:Residential_parts_of_Building_X ex:are "Above ground level" .
+
+ex:Risk_analysis ex:is_of "Building X" .
+
+ex:Safety_measures ex:are_detailed_for "Each part of Building X" ;
+    ex:include "Fire detection",
+        "Fixed active fire extinguishers",
+        "Hand fire extinguishers",
+        "Hydrants for firefighters",
+        "Mechanical ventilation" .
+
+ex:Safety_measures_for_the_shopping_part_of_Building_X ex:include "Fire detection",
+        "Fixed active fire extinguishers",
+        "Hand fire extinguishers",
+        "Hydrants for firefighters" .
+
+ex:Safety_systems ex:are_described_in "Subsequent sections" .
+
+ex:Safety_systems_for_the_residential_part_of_Building_X ex:include "Fire detection",
+        "Hand fire extinguishers",
+        "Hydrants for firefighters" .
+
+ex:Section_called_shopping_part ex:is_part_of "Building X" .
+
+ex:Sections ex:correspond_to "Different parts" .
+
+ex:Shopping_part_of_Building_X ex:has "Material fire risk level" .
+
+ex:Shopping_parts_of_Building_X ex:are "Above ground level" .
+
+ex:Vertical_staircases ex:provide_access "To Emergency Access Roads from the residential part of Building X" ;
+    ex:provide_access_from "Residential part of Building X" ;
+    ex:provide_access_to "Emergency units" .
+
+ex:Walkway ex:connects "Parking location of firefighters to fire location in residential part of Building X" ;
+    ex:provides_access_from "Stop point to the location of the fire" .
+
+ex:Walkway_for_the_emergency_unit_in_the_garage_of_Building_X ex:has_length "45 m" .
+
+ex:Walkway_in_emergency_unit_of_Building_X ex:has_length "55 m" .
+
+ex:Walkway_in_the_emergency_unit_of_Building_X ex:has_length "35 m" .
+
+ex:Walkways ex:are_located_on "Each floor of Building X" ;
+    ex:provide_access "To Emergency Access Roads from the residential part of Building X" ;
+    ex:provide_access_from "Residential part of Building X" ;
+    ex:provide_access_to "Emergency units" .
+
