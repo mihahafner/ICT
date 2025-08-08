@@ -1,0 +1,23 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix ex: <http://example.org/aec#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:BuildingSafetyShape
+  a sh:NodeShape ;
+  sh:targetClass ex:Building ;
+  sh:property [
+    sh:path ex:hasSafetySystem ;
+    sh:minCount 1 ;
+    sh:message "Every building must have at least one Safety System" ;
+  ] .
+
+ex:ExtinguisherWeightShape
+  a sh:NodeShape ;
+  sh:targetClass ex:FireExtinguisher ;
+  sh:property [
+    sh:path ex:hasWeight ;
+    sh:minInclusive 5.0 ;
+    sh:maxInclusive 12.0 ;
+    sh:datatype xsd:float ;
+    sh:message "Fire extinguishers must weigh between 5 and 12 kg" ;
+  ] .

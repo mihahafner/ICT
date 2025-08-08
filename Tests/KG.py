@@ -208,4 +208,4 @@ if __name__ == "__main__":
         all_triples.extend(triples)
 
     build_rdf_graph(all_triples)
-    visualize_graph(all_triples, output_file="Tests/graph.html")
+    visualize_graph(all_triples, output_file="Tests/KG_graph.html")

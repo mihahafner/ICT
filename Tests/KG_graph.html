@@ -1,0 +1,250 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 600px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+             #loadingBar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width: 100%;
+                 height: 600px;
+                 background-color:rgba(200,200,200,0.8);
+                 -webkit-transition: all 0.5s ease;
+                 -moz-transition: all 0.5s ease;
+                 -ms-transition: all 0.5s ease;
+                 -o-transition: all 0.5s ease;
+                 transition: all 0.5s ease;
+                 opacity:1;
+             }
+
+             #bar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width:20px;
+                 height:20px;
+                 margin:auto auto auto auto;
+                 border-radius:11px;
+                 border:2px solid rgba(30,30,30,0.05);
+                 background: rgb(0, 173, 246); /* Old browsers */
+                 box-shadow: 2px 0px 4px rgba(0,0,0,0.4);
+             }
+
+             #border {
+                 position:absolute;
+                 top:10px;
+                 left:10px;
+                 width:500px;
+                 height:23px;
+                 margin:auto auto auto auto;
+                 box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
+                 border-radius:10px;
+             }
+
+             #text {
+                 position:absolute;
+                 top:8px;
+                 left:530px;
+                 width:30px;
+                 height:50px;
+                 margin:auto auto auto auto;
+                 font-size:22px;
+                 color: #000000;
+             }
+
+             div.outerBorder {
+                 position:relative;
+                 top:400px;
+                 width:600px;
+                 height:44px;
+                 margin:auto auto auto auto;
+                 border:8px solid rgba(0,0,0,0.1);
+                 background: rgb(252,252,252); /* Old browsers */
+                 background: -moz-linear-gradient(top,  rgba(252,252,252,1) 0%, rgba(237,237,237,1) 100%); /* FF3.6+ */
+                 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,252,252,1)), color-stop(100%,rgba(237,237,237,1))); /* Chrome,Safari4+ */
+                 background: -webkit-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Chrome10+,Safari5.1+ */
+                 background: -o-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Opera 11.10+ */
+                 background: -ms-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* IE10+ */
+                 background: linear-gradient(to bottom,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* W3C */
+                 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+                 border-radius:72px;
+                 box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+             }
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+            <div id="loadingBar">
+              <div class="outerBorder">
+                <div id="text">0%</div>
+                <div id="border">
+                  <div id="bar"></div>
+                </div>
+              </div>
+            </div>
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": "Report", "label": "Report", "shape": "dot"}, {"color": "#97c2fc", "id": "Risk analysis of Building X", "label": "Risk analysis of Building X", "shape": "dot"}, {"color": "#97c2fc", "id": "Analysis", "label": "Analysis", "shape": "dot"}, {"color": "#97c2fc", "id": "Fire scenarios", "label": "Fire scenarios", "shape": "dot"}, {"color": "#97c2fc", "id": "Normal operation of Building X", "label": "Normal operation of Building X", "shape": "dot"}, {"color": "#97c2fc", "id": "Building X", "label": "Building X", "shape": "dot"}, {"color": "#97c2fc", "id": "High-rise building", "label": "High-rise building", "shape": "dot"}, {"color": "#97c2fc", "id": "Apartments", "label": "Apartments", "shape": "dot"}, {"color": "#97c2fc", "id": "Shopping centre", "label": "Shopping centre", "shape": "dot"}, {"color": "#97c2fc", "id": "Three sections", "label": "Three sections", "shape": "dot"}, {"color": "#97c2fc", "id": "Residential part", "label": "Residential part", "shape": "dot"}, {"color": "#97c2fc", "id": "Shopping part", "label": "Shopping part", "shape": "dot"}, {"color": "#97c2fc", "id": "Garage part", "label": "Garage part", "shape": "dot"}, {"color": "#97c2fc", "id": "An analysis", "label": "An analysis", "shape": "dot"}, {"color": "#97c2fc", "id": "A general risk analysis of Building X", "label": "A general risk analysis of Building X", "shape": "dot"}, {"color": "#97c2fc", "id": "A risk analysis of the residential part of Building X", "label": "A risk analysis of the residential part of Building X", "shape": "dot"}, {"color": "#97c2fc", "id": "A risk analysis of the shopping part of Building X", "label": "A risk analysis of the shopping part of Building X", "shape": "dot"}, {"color": "#97c2fc", "id": "A risk analysis of the garage part of Building X", "label": "A risk analysis of the garage part of Building X", "shape": "dot"}, {"color": "#97c2fc", "id": "ABC", "label": "ABC", "shape": "dot"}, {"color": "#97c2fc", "id": "A building", "label": "A building", "shape": "dot"}, {"color": "#97c2fc", "id": "10 floors", "label": "10 floors", "shape": "dot"}, {"color": "#97c2fc", "id": "8 floors above ground level", "label": "8 floors above ground level", "shape": "dot"}, {"color": "#97c2fc", "id": "2 floors below ground level", "label": "2 floors below ground level", "shape": "dot"}, {"color": "#97c2fc", "id": "Floors below ground level", "label": "Floors below ground level", "shape": "dot"}, {"color": "#97c2fc", "id": "Floors below ground level in Building X", "label": "Floors below ground level in Building X", "shape": "dot"}, {"color": "#97c2fc", "id": "Garages", "label": "Garages", "shape": "dot"}, {"color": "#97c2fc", "id": "Residential parts", "label": "Residential parts", "shape": "dot"}, {"color": "#97c2fc", "id": "Shopping parts", "label": "Shopping parts", "shape": "dot"}, {"color": "#97c2fc", "id": "Residential parts of Building X", "label": "Residential parts of Building X", "shape": "dot"}, {"color": "#97c2fc", "id": "Above ground level", "label": "Above ground level", "shape": "dot"}, {"color": "#97c2fc", "id": "Shopping parts of Building X", "label": "Shopping parts of Building X", "shape": "dot"}, {"color": "#97c2fc", "id": "25 meters", "label": "25 meters", "shape": "dot"}, {"color": "#97c2fc", "id": "30 meters", "label": "30 meters", "shape": "dot"}, {"color": "#97c2fc", "id": "5 meters", "label": "5 meters", "shape": "dot"}, {"color": "#97c2fc", "id": "Varying number of people", "label": "Varying number of people", "shape": "dot"}, {"color": "#97c2fc", "id": "Different parts of Building X", "label": "Different parts of Building X", "shape": "dot"}, {"color": "#97c2fc", "id": "Different number of people", "label": "Different number of people", "shape": "dot"}, {"color": "#97c2fc", "id": "Details", "label": "Details", "shape": "dot"}, {"color": "#97c2fc", "id": "Sections", "label": "Sections", "shape": "dot"}, {"color": "#97c2fc", "id": "Each part", "label": "Each part", "shape": "dot"}, {"color": "#97c2fc", "id": "Separate section for details", "label": "Separate section for details", "shape": "dot"}, {"color": "#97c2fc", "id": "Different parts", "label": "Different parts", "shape": "dot"}, {"color": "#97c2fc", "id": "Fire", "label": "Fire", "shape": "dot"}, {"color": "#97c2fc", "id": "Materials", "label": "Materials", "shape": "dot"}, {"color": "#97c2fc", "id": "Some materials", "label": "Some materials", "shape": "dot"}, {"color": "#97c2fc", "id": "Corresponding sections", "label": "Corresponding sections", "shape": "dot"}, {"color": "#97c2fc", "id": "Each part of Building X", "label": "Each part of Building X", "shape": "dot"}, {"color": "#97c2fc", "id": "Emergency Access Roads", "label": "Emergency Access Roads", "shape": "dot"}, {"color": "#97c2fc", "id": "1300 m from the firefighting brigade", "label": "1300 m from the firefighting brigade", "shape": "dot"}, {"color": "#97c2fc", "id": "Emergency units", "label": "Emergency units", "shape": "dot"}, {"color": "#97c2fc", "id": "10 minutes", "label": "10 minutes", "shape": "dot"}, {"color": "#97c2fc", "id": "Case of a fire", "label": "Case of a fire", "shape": "dot"}, {"color": "#97c2fc", "id": "An area", "label": "An area", "shape": "dot"}, {"color": "#97c2fc", "id": "Emergency vehicles", "label": "Emergency vehicles", "shape": "dot"}, {"color": "#97c2fc", "id": "In front of Building X", "label": "In front of Building X", "shape": "dot"}, {"color": "#97c2fc", "id": "General emergency paths", "label": "General emergency paths", "shape": "dot"}, {"color": "#97c2fc", "id": "Main vertical staircases", "label": "Main vertical staircases", "shape": "dot"}, {"color": "#97c2fc", "id": "Emergency paths", "label": "Emergency paths", "shape": "dot"}, {"color": "#97c2fc", "id": "Lowest floor", "label": "Lowest floor", "shape": "dot"}, {"color": "#97c2fc", "id": "Highest floor", "label": "Highest floor", "shape": "dot"}, {"color": "#97c2fc", "id": "Floors", "label": "Floors", "shape": "dot"}, {"color": "#97c2fc", "id": "Each floor in Building X", "label": "Each floor in Building X", "shape": "dot"}, {"color": "#97c2fc", "id": "Evacuation path", "label": "Evacuation path", "shape": "dot"}, {"color": "#97c2fc", "id": "Corresponding sections for each part of Building X", "label": "Corresponding sections for each part of Building X", "shape": "dot"}, {"color": "#97c2fc", "id": "Multiple parts", "label": "Multiple parts", "shape": "dot"}, {"color": "#97c2fc", "id": "A section to describe details", "label": "A section to describe details", "shape": "dot"}, {"color": "#97c2fc", "id": "Safety measures", "label": "Safety measures", "shape": "dot"}, {"color": "#97c2fc", "id": "Detailed safety systems", "label": "Detailed safety systems", "shape": "dot"}, {"color": "#97c2fc", "id": "Safety systems for Building X", "label": "Safety systems for Building X", "shape": "dot"}, {"color": "#97c2fc", "id": "Subsequent sections", "label": "Subsequent sections", "shape": "dot"}, {"color": "#97c2fc", "id": "Network of hydrants", "label": "Network of hydrants", "shape": "dot"}, {"color": "#97c2fc", "id": "Throughout Building X", "label": "Throughout Building X", "shape": "dot"}, {"color": "#97c2fc", "id": "Residential part of Building X", "label": "Residential part of Building X", "shape": "dot"}, {"color": "#97c2fc", "id": "Occupants", "label": "Occupants", "shape": "dot"}, {"color": "#97c2fc", "id": "Density of occupants in residential part of Building X", "label": "Density of occupants in residential part of Building X", "shape": "dot"}, {"color": "#97c2fc", "id": "0.01 person/m2", "label": "0.01 person/m2", "shape": "dot"}, {"color": "#97c2fc", "id": "Firepower", "label": "Firepower", "shape": "dot"}, {"color": "#97c2fc", "id": "Building X\u0027s residential part", "label": "Building X\u0027s residential part", "shape": "dot"}, {"color": "#97c2fc", "id": "3", "label": "3", "shape": "dot"}, {"color": "#97c2fc", "id": "A residential part", "label": "A residential part", "shape": "dot"}, {"color": "#97c2fc", "id": "Walkways", "label": "Walkways", "shape": "dot"}, {"color": "#97c2fc", "id": "Vertical staircases", "label": "Vertical staircases", "shape": "dot"}, {"color": "#97c2fc", "id": "Walkway", "label": "Walkway", "shape": "dot"}, {"color": "#97c2fc", "id": "Emergency unit", "label": "Emergency unit", "shape": "dot"}, {"color": "#97c2fc", "id": "55 m", "label": "55 m", "shape": "dot"}, {"color": "#97c2fc", "id": "Location where firefighters stop their vehicles", "label": "Location where firefighters stop their vehicles", "shape": "dot"}, {"color": "#97c2fc", "id": "Location of fires in the residential part of Building X", "label": "Location of fires in the residential part of Building X", "shape": "dot"}, {"color": "#97c2fc", "id": "Evacuation paths", "label": "Evacuation paths", "shape": "dot"}, {"color": "#97c2fc", "id": "Evacuation paths in Building X", "label": "Evacuation paths in Building X", "shape": "dot"}, {"color": "#97c2fc", "id": "General emergency paths in Building X", "label": "General emergency paths in Building X", "shape": "dot"}, {"color": "#97c2fc", "id": "Lowest floor to the highest floor", "label": "Lowest floor to the highest floor", "shape": "dot"}, {"color": "#97c2fc", "id": "Each floor", "label": "Each floor", "shape": "dot"}, {"color": "#97c2fc", "id": "Each floor in the residential part of Building X", "label": "Each floor in the residential part of Building X", "shape": "dot"}, {"color": "#97c2fc", "id": "An evacuation path", "label": "An evacuation path", "shape": "dot"}, {"color": "#97c2fc", "id": "Safety measures for the residential part of Building X", "label": "Safety measures for the residential part of Building X", "shape": "dot"}, {"color": "#97c2fc", "id": "Fire detection system", "label": "Fire detection system", "shape": "dot"}, {"color": "#97c2fc", "id": "Hand fire extinguishers", "label": "Hand fire extinguishers", "shape": "dot"}, {"color": "#97c2fc", "id": "Hydrants for firefighters", "label": "Hydrants for firefighters", "shape": "dot"}, {"color": "#97c2fc", "id": "Emergency path", "label": "Emergency path", "shape": "dot"}, {"color": "#97c2fc", "id": "Emergency path in the residential part of Building X", "label": "Emergency path in the residential part of Building X", "shape": "dot"}, {"color": "#97c2fc", "id": "1 m wide", "label": "1 m wide", "shape": "dot"}, {"color": "#97c2fc", "id": "Shopping part of Building X", "label": "Shopping part of Building X", "shape": "dot"}, {"color": "#97c2fc", "id": "Analyzed", "label": "Analyzed", "shape": "dot"}, {"color": "#97c2fc", "id": "Analysis of the shopping part of Building X", "label": "Analysis of the shopping part of Building X", "shape": "dot"}, {"color": "#97c2fc", "id": "Number of people", "label": "Number of people", "shape": "dot"}, {"color": "#97c2fc", "id": "Density of the occupants in the shopping part of Building X", "label": "Density of the occupants in the shopping part of Building X", "shape": "dot"}, {"color": "#97c2fc", "id": "0.1 person/m2", "label": "0.1 person/m2", "shape": "dot"}, {"color": "#97c2fc", "id": "A shopping part", "label": "A shopping part", "shape": "dot"}, {"color": "#97c2fc", "id": "Material fire risk level", "label": "Material fire risk level", "shape": "dot"}, {"color": "#97c2fc", "id": "Building X\u0027s shopping part", "label": "Building X\u0027s shopping part", "shape": "dot"}, {"color": "#97c2fc", "id": "Material fire risk level in Building X\u0027s shopping part", "label": "Material fire risk level in Building X\u0027s shopping part", "shape": "dot"}, {"color": "#97c2fc", "id": "5", "label": "5", "shape": "dot"}, {"color": "#97c2fc", "id": "Walkways in Building X", "label": "Walkways in Building X", "shape": "dot"}, {"color": "#97c2fc", "id": "Emergency units from shopping part", "label": "Emergency units from shopping part", "shape": "dot"}, {"color": "#97c2fc", "id": "Vertical staircases in Building X", "label": "Vertical staircases in Building X", "shape": "dot"}, {"color": "#97c2fc", "id": "35 m", "label": "35 m", "shape": "dot"}, {"color": "#97c2fc", "id": "Firefighters", "label": "Firefighters", "shape": "dot"}, {"color": "#97c2fc", "id": "Location to the fire location in the shopping part of Building X", "label": "Location to the fire location in the shopping part of Building X", "shape": "dot"}, {"color": "#97c2fc", "id": "Main vertical staircases in Building X", "label": "Main vertical staircases in Building X", "shape": "dot"}, {"color": "#97c2fc", "id": "Each floor of the shopping part of Building X", "label": "Each floor of the shopping part of Building X", "shape": "dot"}, {"color": "#97c2fc", "id": "Different sections", "label": "Different sections", "shape": "dot"}, {"color": "#97c2fc", "id": "Each section of Building X", "label": "Each section of Building X", "shape": "dot"}, {"color": "#97c2fc", "id": "Relevant conditions", "label": "Relevant conditions", "shape": "dot"}, {"color": "#97c2fc", "id": "These conditions", "label": "These conditions", "shape": "dot"}, {"color": "#97c2fc", "id": "Provision of certain safety systems", "label": "Provision of certain safety systems", "shape": "dot"}, {"color": "#97c2fc", "id": "Safety systems required in the shopping part of Building X", "label": "Safety systems required in the shopping part of Building X", "shape": "dot"}, {"color": "#97c2fc", "id": "Fire detection systems", "label": "Fire detection systems", "shape": "dot"}, {"color": "#97c2fc", "id": "Fixed active fire extinguishers", "label": "Fixed active fire extinguishers", "shape": "dot"}, {"color": "#97c2fc", "id": "Firefighter hydrants", "label": "Firefighter hydrants", "shape": "dot"}, {"color": "#97c2fc", "id": "An emergency path", "label": "An emergency path", "shape": "dot"}, {"color": "#97c2fc", "id": "Emergency path in the shopping part of Building X", "label": "Emergency path in the shopping part of Building X", "shape": "dot"}, {"color": "#97c2fc", "id": "2 meters wide", "label": "2 meters wide", "shape": "dot"}, {"color": "#97c2fc", "id": "A garage part", "label": "A garage part", "shape": "dot"}, {"color": "#97c2fc", "id": "Garage part of Building X", "label": "Garage part of Building X", "shape": "dot"}, {"color": "#97c2fc", "id": "A certain number of occupants", "label": "A certain number of occupants", "shape": "dot"}, {"color": "#97c2fc", "id": "Density of occupants in the garage part of Building X", "label": "Density of occupants in the garage part of Building X", "shape": "dot"}, {"color": "#97c2fc", "id": "0.05 person per square meter", "label": "0.05 person per square meter", "shape": "dot"}, {"color": "#97c2fc", "id": "Significant firepower", "label": "Significant firepower", "shape": "dot"}, {"color": "#97c2fc", "id": "A garage", "label": "A garage", "shape": "dot"}, {"color": "#97c2fc", "id": "Garage", "label": "Garage", "shape": "dot"}, {"color": "#97c2fc", "id": "Garage of Building X", "label": "Garage of Building X", "shape": "dot"}, {"color": "#97c2fc", "id": "4", "label": "4", "shape": "dot"}, {"color": "#97c2fc", "id": "Each floor of Building X", "label": "Each floor of Building X", "shape": "dot"}, {"color": "#97c2fc", "id": "45 m", "label": "45 m", "shape": "dot"}, {"color": "#97c2fc", "id": "Location of the fire in garage part of Building X", "label": "Location of the fire in garage part of Building X", "shape": "dot"}, {"color": "#97c2fc", "id": "Garage in Building X", "label": "Garage in Building X", "shape": "dot"}, {"color": "#97c2fc", "id": "Multiple floors", "label": "Multiple floors", "shape": "dot"}, {"color": "#97c2fc", "id": "Each floor in the garage of Building X", "label": "Each floor in the garage of Building X", "shape": "dot"}, {"color": "#97c2fc", "id": "In sections", "label": "In sections", "shape": "dot"}, {"color": "#97c2fc", "id": "In the garage part of Building X", "label": "In the garage part of Building X", "shape": "dot"}, {"color": "#97c2fc", "id": "Fire detection", "label": "Fire detection", "shape": "dot"}, {"color": "#97c2fc", "id": "Mechanical ventilation", "label": "Mechanical ventilation", "shape": "dot"}, {"color": "#97c2fc", "id": "Width of the emergency path in the garage", "label": "Width of the emergency path in the garage", "shape": "dot"}, {"color": "#97c2fc", "id": "1.5 meters", "label": "1.5 meters", "shape": "dot"}, {"color": "#97c2fc", "id": "Building infrastructure of Building X", "label": "Building infrastructure of Building X", "shape": "dot"}, {"color": "#97c2fc", "id": "Safety requirements", "label": "Safety requirements", "shape": "dot"}, {"color": "#97c2fc", "id": "Safety measures in Building X", "label": "Safety measures in Building X", "shape": "dot"}, {"color": "#97c2fc", "id": "In the event of a fire", "label": "In the event of a fire", "shape": "dot"}, {"color": "#97c2fc", "id": "Building X during a fire", "label": "Building X during a fire", "shape": "dot"}, {"color": "#97c2fc", "id": "A fire", "label": "A fire", "shape": "dot"}]);
+                  edges = new vis.DataSet([{"arrows": "to", "from": "Report", "label": "is about", "to": "Risk analysis of Building X"}, {"arrows": "to", "from": "Analysis", "label": "includes", "to": "Fire scenarios"}, {"arrows": "to", "from": "Fire scenarios", "label": "can happen during", "to": "Normal operation of Building X"}, {"arrows": "to", "from": "Building X", "label": "is", "to": "High-rise building"}, {"arrows": "to", "from": "Building X", "label": "is planned for", "to": "Apartments"}, {"arrows": "to", "from": "Building X", "label": "is planned for", "to": "Shopping centre"}, {"arrows": "to", "from": "Building X", "label": "is built for", "to": "Apartments"}, {"arrows": "to", "from": "Building X", "label": "is built for", "to": "Shopping centre"}, {"arrows": "to", "from": "Building X", "label": "is divided into", "to": "Three sections"}, {"arrows": "to", "from": "Building X", "label": "has section", "to": "Residential part"}, {"arrows": "to", "from": "Building X", "label": "has section", "to": "Shopping part"}, {"arrows": "to", "from": "Building X", "label": "has section", "to": "Garage part"}, {"arrows": "to", "from": "An analysis", "label": "is performed on", "to": "Building X"}, {"arrows": "to", "from": "Analysis", "label": "includes", "to": "A general risk analysis of Building X"}, {"arrows": "to", "from": "Analysis", "label": "includes", "to": "A risk analysis of the residential part of Building X"}, {"arrows": "to", "from": "Analysis", "label": "includes", "to": "A risk analysis of the shopping part of Building X"}, {"arrows": "to", "from": "Analysis", "label": "includes", "to": "A risk analysis of the garage part of Building X"}, {"arrows": "to", "from": "Building X", "label": "is located at", "to": "ABC"}, {"arrows": "to", "from": "Building X", "label": "is", "to": "A building"}, {"arrows": "to", "from": "Building X", "label": "has", "to": "10 floors"}, {"arrows": "to", "from": "Building X", "label": "has", "to": "8 floors above ground level"}, {"arrows": "to", "from": "Building X", "label": "has", "to": "2 floors below ground level"}, {"arrows": "to", "from": "Building X", "label": "has", "to": "Floors below ground level"}, {"arrows": "to", "from": "Floors below ground level in Building X", "label": "are", "to": "Garages"}, {"arrows": "to", "from": "Building X", "label": "includes", "to": "Residential parts"}, {"arrows": "to", "from": "Building X", "label": "includes", "to": "Shopping parts"}, {"arrows": "to", "from": "Residential parts of Building X", "label": "are", "to": "Above ground level"}, {"arrows": "to", "from": "Shopping parts of Building X", "label": "are", "to": "Above ground level"}, {"arrows": "to", "from": "Building X", "label": "has height", "to": "25 meters"}, {"arrows": "to", "from": "Building X", "label": "has length", "to": "30 meters"}, {"arrows": "to", "from": "Building X", "label": "has width", "to": "5 meters"}, {"arrows": "to", "from": "Building X", "label": "has", "to": "Varying number of people"}, {"arrows": "to", "from": "Different parts of Building X", "label": "have", "to": "Different number of people"}, {"arrows": "to", "from": "Details", "label": "are presented in", "to": "Sections"}, {"arrows": "to", "from": "Sections", "label": "are for", "to": "Building X"}, {"arrows": "to", "from": "Each part", "label": "has", "to": "Separate section for details"}, {"arrows": "to", "from": "Separate section for details", "label": "is for", "to": "Building X"}, {"arrows": "to", "from": "Different parts", "label": "can contribute to", "to": "Fire"}, {"arrows": "to", "from": "Different parts", "label": "are of", "to": "Building X"}, {"arrows": "to", "from": "Materials", "label": "vary in", "to": "Different parts"}, {"arrows": "to", "from": "Different parts", "label": "are of", "to": "Building X"}, {"arrows": "to", "from": "Some materials", "label": "can contribute to", "to": "Fire"}, {"arrows": "to", "from": "Some materials", "label": "are in", "to": "Building X"}, {"arrows": "to", "from": "Building X", "label": "has", "to": "Details"}, {"arrows": "to", "from": "Details", "label": "are presented in", "to": "Corresponding sections"}, {"arrows": "to", "from": "Sections", "label": "correspond to", "to": "Each part of Building X"}, {"arrows": "to", "from": "Building X", "label": "has", "to": "Emergency Access Roads"}, {"arrows": "to", "from": "Building X", "label": "is", "to": "1300 m from the firefighting brigade"}, {"arrows": "to", "from": "Emergency units", "label": "require", "to": "10 minutes"}, {"arrows": "to", "from": "Emergency units", "label": "reach", "to": "Building X"}, {"arrows": "to", "from": "Emergency units", "label": "reach Building X in", "to": "Case of a fire"}, {"arrows": "to", "from": "An area", "label": "is provided for", "to": "Emergency vehicles"}, {"arrows": "to", "from": "An area", "label": "is provided for emergency vehicles to stop", "to": "In front of Building X"}, {"arrows": "to", "from": "Building X", "label": "has", "to": "General emergency paths"}, {"arrows": "to", "from": "Main vertical staircases", "label": "serve as", "to": "Emergency paths"}, {"arrows": "to", "from": "Main vertical staircases", "label": "go from", "to": "Lowest floor"}, {"arrows": "to", "from": "Main vertical staircases", "label": "go to", "to": "Highest floor"}, {"arrows": "to", "from": "Building X", "label": "has", "to": "Floors"}, {"arrows": "to", "from": "Each floor in Building X", "label": "has", "to": "Evacuation path"}, {"arrows": "to", "from": "Details", "label": "are presented in", "to": "Corresponding sections for each part of Building X"}, {"arrows": "to", "from": "Building X", "label": "has", "to": "Multiple parts"}, {"arrows": "to", "from": "Each part of Building X", "label": "has", "to": "A section to describe details"}, {"arrows": "to", "from": "Safety measures", "label": "are presented for", "to": "Building X"}, {"arrows": "to", "from": "Detailed safety systems", "label": "exist for", "to": "Each part of Building X"}, {"arrows": "to", "from": "Safety systems for Building X", "label": "are described in", "to": "Subsequent sections"}, {"arrows": "to", "from": "Each part of Building X", "label": "has a corresponding section for", "to": "Safety measures"}, {"arrows": "to", "from": "Building X", "label": "has", "to": "Network of hydrants"}, {"arrows": "to", "from": "Network of hydrants", "label": "is provided", "to": "Throughout Building X"}, {"arrows": "to", "from": "Building X", "label": "has", "to": "Residential part"}, {"arrows": "to", "from": "Analysis", "label": "is of", "to": "Residential part of Building X"}, {"arrows": "to", "from": "Residential part of Building X", "label": "has", "to": "Occupants"}, {"arrows": "to", "from": "Density of occupants in residential part of Building X", "label": "is", "to": "0.01 person/m2"}, {"arrows": "to", "from": "Materials", "label": "are present in", "to": "Residential part of Building X"}, {"arrows": "to", "from": "Materials", "label": "can contribute to", "to": "Firepower"}, {"arrows": "to", "from": "Materials", "label": "location", "to": "Building X\u0027s residential part"}, {"arrows": "to", "from": "Building X", "label": "has a material fire risk level of", "to": "3"}, {"arrows": "to", "from": "Building X", "label": "has", "to": "A residential part"}, {"arrows": "to", "from": "Residential part of Building X", "label": "has", "to": "Emergency Access Roads"}, {"arrows": "to", "from": "Walkways", "label": "provide access to emergency units from", "to": "Residential part of Building X"}, {"arrows": "to", "from": "Walkways", "label": "are located on each floor of", "to": "Residential part of Building X"}, {"arrows": "to", "from": "Vertical staircases", "label": "provide access to emergency units from", "to": "Residential part of Building X"}, {"arrows": "to", "from": "Vertical staircases", "label": "are part of the emergency access in", "to": "Residential part of Building X"}, {"arrows": "to", "from": "Building X", "label": "has", "to": "Walkway"}, {"arrows": "to", "from": "Walkway", "label": "is for", "to": "Emergency unit"}, {"arrows": "to", "from": "Walkway", "label": "is located in", "to": "Residential part of Building X"}, {"arrows": "to", "from": "Walkway", "label": "has length", "to": "55 m"}, {"arrows": "to", "from": "Walkway", "label": "begins at", "to": "Location where firefighters stop their vehicles"}, {"arrows": "to", "from": "Walkway", "label": "leads to", "to": "Location of fires in the residential part of Building X"}, {"arrows": "to", "from": "Building X", "label": "has", "to": "Evacuation paths"}, {"arrows": "to", "from": "General emergency paths", "label": "are part of", "to": "Evacuation paths in Building X"}, {"arrows": "to", "from": "Main vertical staircases", "label": "are part of", "to": "General emergency paths in Building X"}, {"arrows": "to", "from": "Main vertical staircases", "label": "run from", "to": "Lowest floor to the highest floor"}, {"arrows": "to", "from": "Building X", "label": "has", "to": "A residential part"}, {"arrows": "to", "from": "Each floor", "label": "is a part of", "to": "Residential part of Building X"}, {"arrows": "to", "from": "Each floor in the residential part of Building X", "label": "has", "to": "An evacuation path"}, {"arrows": "to", "from": "Building X", "label": "has", "to": "Residential part"}, {"arrows": "to", "from": "Building X", "label": "has", "to": "Shopping part"}, {"arrows": "to", "from": "Building X", "label": "has details presented in", "to": "Corresponding sections"}, {"arrows": "to", "from": "Residential part of Building X", "label": "requires", "to": "Safety measures"}, {"arrows": "to", "from": "Safety measures for the residential part of Building X", "label": "include", "to": "Fire detection system"}, {"arrows": "to", "from": "Safety measures for the residential part of Building X", "label": "include", "to": "Hand fire extinguishers"}, {"arrows": "to", "from": "Safety measures for the residential part of Building X", "label": "include", "to": "Hydrants for firefighters"}, {"arrows": "to", "from": "Residential part of Building X", "label": "has", "to": "Emergency path"}, {"arrows": "to", "from": "Emergency path in the residential part of Building X", "label": "is", "to": "1 m wide"}, {"arrows": "to", "from": "Shopping part of Building X", "label": "has been", "to": "Analyzed"}, {"arrows": "to", "from": "Analysis of the shopping part of Building X", "label": "includes", "to": "Number of people"}, {"arrows": "to", "from": "Density of the occupants in the shopping part of Building X", "label": "is", "to": "0.1 person/m2"}, {"arrows": "to", "from": "Materials", "label": "are present in", "to": "Shopping part of Building X"}, {"arrows": "to", "from": "Materials", "label": "can contribute to", "to": "Firepower"}, {"arrows": "to", "from": "Building X", "label": "has", "to": "A shopping part"}, {"arrows": "to", "from": "Material fire risk level", "label": "is measured in", "to": "Building X\u0027s shopping part"}, {"arrows": "to", "from": "Material fire risk level in Building X\u0027s shopping part", "label": "is", "to": "5"}, {"arrows": "to", "from": "Building X", "label": "has", "to": "Emergency units"}, {"arrows": "to", "from": "Building X", "label": "has", "to": "Shopping part"}, {"arrows": "to", "from": "Building X", "label": "has", "to": "Walkways"}, {"arrows": "to", "from": "Walkways in Building X", "label": "provide access", "to": "Emergency units from shopping part"}, {"arrows": "to", "from": "Walkways in Building X", "label": "are located", "to": "Each floor"}, {"arrows": "to", "from": "Building X", "label": "has", "to": "Vertical staircases"}, {"arrows": "to", "from": "Vertical staircases in Building X", "label": "provide access", "to": "Emergency units from shopping part"}, {"arrows": "to", "from": "Walkway", "label": "is in", "to": "Shopping part of Building X"}, {"arrows": "to", "from": "Walkway", "label": "is for", "to": "Emergency unit"}, {"arrows": "to", "from": "Walkway", "label": "has length", "to": "35 m"}, {"arrows": "to", "from": "Walkway", "label": "starts from", "to": "Location where firefighters stop their vehicles"}, {"arrows": "to", "from": "Firefighters", "label": "continue on foot from", "to": "Location to the fire location in the shopping part of Building X"}, {"arrows": "to", "from": "Building X", "label": "has", "to": "Evacuation paths"}, {"arrows": "to", "from": "Building X", "label": "has", "to": "General emergency paths"}, {"arrows": "to", "from": "General emergency paths", "label": "are in", "to": "Building X"}, {"arrows": "to", "from": "Main vertical staircases in Building X", "label": "serve as", "to": "Evacuation paths"}, {"arrows": "to", "from": "Main vertical staircases", "label": "run from", "to": "Lowest floor to the highest floor"}, {"arrows": "to", "from": "Building X", "label": "has", "to": "A shopping part"}, {"arrows": "to", "from": "Each floor", "label": "is a part of", "to": "Shopping part of Building X"}, {"arrows": "to", "from": "Each floor of the shopping part of Building X", "label": "has", "to": "An evacuation path"}, {"arrows": "to", "from": "Building X", "label": "has", "to": "Different sections"}, {"arrows": "to", "from": "Details", "label": "are presented for", "to": "Each section of Building X"}, {"arrows": "to", "from": "Building X", "label": "has", "to": "A shopping part"}, {"arrows": "to", "from": "Shopping part of Building X", "label": "has", "to": "Relevant conditions"}, {"arrows": "to", "from": "These conditions", "label": "include", "to": "Provision of certain safety systems"}, {"arrows": "to", "from": "Safety systems required in the shopping part of Building X", "label": "include", "to": "Fire detection systems"}, {"arrows": "to", "from": "Hand fire extinguishers", "label": "are required in", "to": "Shopping part of Building X"}, {"arrows": "to", "from": "Fixed active fire extinguishers", "label": "are required in", "to": "Shopping part of Building X"}, {"arrows": "to", "from": "Firefighter hydrants", "label": "are required in", "to": "Shopping part of Building X"}, {"arrows": "to", "from": "Shopping part of Building X", "label": "has", "to": "An emergency path"}, {"arrows": "to", "from": "Emergency path in the shopping part of Building X", "label": "is", "to": "2 meters wide"}, {"arrows": "to", "from": "Building X", "label": "has", "to": "A garage part"}, {"arrows": "to", "from": "An analysis", "label": "has been done on", "to": "Garage part of Building X"}, {"arrows": "to", "from": "Garage part of Building X", "label": "has", "to": "A certain number of occupants"}, {"arrows": "to", "from": "Density of occupants in the garage part of Building X", "label": "is", "to": "0.05 person per square meter"}, {"arrows": "to", "from": "Materials", "label": "are present in", "to": "Garage part of Building X"}, {"arrows": "to", "from": "Materials", "label": "contribute to", "to": "Firepower"}, {"arrows": "to", "from": "Materials", "label": "have level of contribution to", "to": "Significant firepower"}, {"arrows": "to", "from": "Building X", "label": "has", "to": "A garage"}, {"arrows": "to", "from": "Garage", "label": "is part of", "to": "Building X"}, {"arrows": "to", "from": "Garage of Building X", "label": "has material fire risk level", "to": "4"}, {"arrows": "to", "from": "Building X", "label": "has", "to": "A garage"}, {"arrows": "to", "from": "Emergency units", "label": "are part of", "to": "Building X"}, {"arrows": "to", "from": "Walkways", "label": "provide access from", "to": "Garage of Building X"}, {"arrows": "to", "from": "Walkways", "label": "provide access to", "to": "Emergency units"}, {"arrows": "to", "from": "Walkways", "label": "are located on", "to": "Each floor of Building X"}, {"arrows": "to", "from": "Vertical staircases", "label": "provide access from", "to": "Garage of Building X"}, {"arrows": "to", "from": "Vertical staircases", "label": "provide access to", "to": "Emergency units"}, {"arrows": "to", "from": "Building X", "label": "has", "to": "Emergency unit"}, {"arrows": "to", "from": "Emergency unit", "label": "is in", "to": "Garage part of Building X"}, {"arrows": "to", "from": "Emergency unit", "label": "has", "to": "Walkway"}, {"arrows": "to", "from": "Walkway", "label": "has length", "to": "45 m"}, {"arrows": "to", "from": "Walkway", "label": "starts from", "to": "Location where firefighters stop their vehicles"}, {"arrows": "to", "from": "Walkway", "label": "ends at", "to": "Location of the fire in garage part of Building X"}, {"arrows": "to", "from": "Building X", "label": "has", "to": "Evacuation paths"}, {"arrows": "to", "from": "Evacuation paths", "label": "are", "to": "General emergency paths"}, {"arrows": "to", "from": "General emergency paths", "label": "are located in", "to": "Building X"}, {"arrows": "to", "from": "Main vertical staircases", "label": "are part of", "to": "General emergency paths"}, {"arrows": "to", "from": "Main vertical staircases", "label": "run from lowest to highest floor in", "to": "Building X"}, {"arrows": "to", "from": "Building X", "label": "has", "to": "A garage"}, {"arrows": "to", "from": "Garage in Building X", "label": "has", "to": "Multiple floors"}, {"arrows": "to", "from": "Each floor in the garage of Building X", "label": "has", "to": "An evacuation path"}, {"arrows": "to", "from": "Garage", "label": "is part of", "to": "Building X"}, {"arrows": "to", "from": "Details", "label": "are presented", "to": "In sections"}, {"arrows": "to", "from": "Safety measures", "label": "are required", "to": "In the garage part of Building X"}, {"arrows": "to", "from": "Safety measures", "label": "include", "to": "Fire detection"}, {"arrows": "to", "from": "Safety measures", "label": "include", "to": "Hand fire extinguishers"}, {"arrows": "to", "from": "Safety measures", "label": "include", "to": "Fixed active fire extinguishers"}, {"arrows": "to", "from": "Safety measures", "label": "include", "to": "Hydrants for firefighters"}, {"arrows": "to", "from": "Safety measures", "label": "include", "to": "Mechanical ventilation"}, {"arrows": "to", "from": "An emergency path", "label": "exists", "to": "In the garage part of Building X"}, {"arrows": "to", "from": "Width of the emergency path in the garage", "label": "is", "to": "1.5 meters"}, {"arrows": "to", "from": "Building infrastructure of Building X", "label": "is compliant with", "to": "Safety requirements"}, {"arrows": "to", "from": "Safety measures in Building X", "label": "detect", "to": "Fire"}, {"arrows": "to", "from": "Safety measures in Building X", "label": "allow occupants to safely exit", "to": "In the event of a fire"}, {"arrows": "to", "from": "Safety measures in Building X", "label": "allow emergency units to quickly access", "to": "Building X during a fire"}, {"arrows": "to", "from": "Safety measures in Building X", "label": "enable emergency units to extinguish", "to": "A fire"}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+                      network.on("stabilizationProgress", function(params) {
+                          document.getElementById('loadingBar').removeAttribute("style");
+                          var maxWidth = 496;
+                          var minWidth = 20;
+                          var widthFactor = params.iterations/params.total;
+                          var width = Math.max(minWidth,maxWidth * widthFactor);
+                          document.getElementById('bar').style.width = width + 'px';
+                          document.getElementById('text').innerHTML = Math.round(widthFactor*100) + '%';
+                      });
+                      network.once("stabilizationIterationsDone", function() {
+                          document.getElementById('text').innerHTML = '100%';
+                          document.getElementById('bar').style.width = '496px';
+                          document.getElementById('loadingBar').style.opacity = 0;
+                          // really clean the dom element
+                          setTimeout(function () {document.getElementById('loadingBar').style.display = 'none';}, 500);
+                      });
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>

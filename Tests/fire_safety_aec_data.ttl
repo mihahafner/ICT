@@ -1,0 +1,25 @@
+@prefix ex: <http://example.org/aec#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:Building_X a ex:Building ;
+    ex:height "25.0"^^xsd:float ;
+    ex:numberOfFloors "8"^^xsd:int ;
+    ex:hasSafetySystem ex:Sprinkler_System_1 ;
+    ex:hasSafetyEquipment ex:Hydrant_1 ;
+    ex:hasFunction ex:Evacuation_Function ;
+    ex:inPhase ex:Operation .
+
+ex:Sprinkler_System_1 a ex:SafetySystem ;
+    ex:supportsFunction ex:Incident_Detection_Function ;
+    ex:mitigates ex:Evacuation_Function .
+
+ex:Hydrant_1 a ex:Hydrant ;
+    ex:hasWeight "6.0"^^xsd:float .
+
+ex:Evacuation_Function a ex:Evacuation ;
+    ex:requiredInPhase ex:Emergency .
+
+ex:Incident_Detection_Function a ex:IncidentDetection .
+
+ex:Operation a ex:Operation .
+ex:Emergency a ex:Emergency .

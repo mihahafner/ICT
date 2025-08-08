@@ -1,14 +1,16 @@
 Entity
 0.01 person/m2
-0.05 person/m2
+0.05 person per square meter
 0.1 person/m2
 1 m wide
-1.5 m wide
+1.5 meters
 10 floors
-1300 m from firefighting brigade
+10 minutes
+1300 m from the firefighting brigade
 2 floors below ground level
-2 m wide
+2 meters wide
 25 meters
+3
 30 meters
 35 m
 4
@@ -17,151 +19,143 @@ Entity
 5 meters
 55 m
 8 floors above ground level
-A corresponding section
-A corresponding section for its detail
-A floor
+A building
+A certain number of occupants
+A fire
 A garage
 A garage part
 A general risk analysis of Building X
-A high-rise building
-A material fire risk level
-A network of hydrants
-A path
 A residential part
-A shopping centre
+A risk analysis of the garage part of Building X
+A risk analysis of the residential part of Building X
+A risk analysis of the shopping part of Building X
+A section to describe details
 A shopping part
-A specific risk analysis
-A walkway
 ABC
 Above ground level
 An analysis
-An area for emergency vehicles to stop
+An area
 An emergency path
-An emergency unit
 An evacuation path
 Analysis
 Analysis of the shopping part of Building X
 Analyzed
 Apartments
-Approximately 10 minutes to reach Building X in case of fire
-At the start of the walkway in the emergency unit of the garage in Building X
-Below ground level
 Building X
-Building's emergency paths
-Certain location on the walkway
-Close to the walkway
-Contribution of the materials in the garage part of Building X
+Building X during a fire
+Building X's residential part
+Building X's shopping part
+Building infrastructure of Building X
+Case of a fire
 Corresponding sections
-Density of the occupants in the garage part of Building X
-Density of the occupants in the residential part of Building X
+Corresponding sections for each part of Building X
+Density of occupants in residential part of Building X
+Density of occupants in the garage part of Building X
+Density of the occupants in the shopping part of Building X
+Detailed safety systems
 Details
-Details for Building X
-Detection of fire
-Different materials
+Different number of people
 Different parts
 Different parts of Building X
-Different population densities
-Different sections for Building X
+Different sections
 Each floor
+Each floor in Building X
+Each floor in the garage of Building X
+Each floor in the residential part of Building X
 Each floor of Building X
+Each floor of the shopping part of Building X
+Each part
 Each part of Building X
-Each path
+Each section of Building X
 Emergency Access Roads
-Emergency path in the garage part of Building X
+Emergency path
 Emergency path in the residential part of Building X
 Emergency path in the shopping part of Building X
 Emergency paths
-Emergency paths in Building X
 Emergency unit
-Emergency unit in Building X
-Emergency unit in residential part of Building X
-Emergency unit in the garage of Building X
 Emergency units
-Entire Building X
-Evacuation
+Emergency units from shopping part
+Emergency vehicles
+Evacuation path
+Evacuation paths
+Evacuation paths in Building X
+Fire
 Fire detection
-Fire in Building X
-Fire safety measures in Building X
+Fire detection system
+Fire detection systems
 Fire scenarios
-Fire scenarios in Building X
+Firefighter hydrants
 Firefighters
 Firepower
 Fixed active fire extinguishers
 Floors
-From the lowest to the highest floor of Building X
-From the start of the walkway to the location of the fire in Building X
-From the stop point to the location of the fire
+Floors below ground level
+Floors below ground level in Building X
 Garage
 Garage in Building X
+Garage of Building X
+Garage part
 Garage part of Building X
-Garage section
 Garages
 General emergency paths
+General emergency paths in Building X
 Hand fire extinguishers
+High-rise building
 Highest floor
-Highest floor in Building X
 Hydrants for firefighters
 In front of Building X
-Location of fire from certain location
+In sections
+In the event of a fire
+In the garage part of Building X
+Location of fires in the residential part of Building X
+Location of the fire in garage part of Building X
+Location to the fire location in the shopping part of Building X
+Location where firefighters stop their vehicles
 Lowest floor
+Lowest floor to the highest floor
 Main vertical staircases
 Main vertical staircases in Building X
-Main vertical staircases in general emergency paths
 Material fire risk level
-Material fire risk level in the garage
-Material fire risk level of 3
-Material fire risk level of shopping part of Building X
+Material fire risk level in Building X's shopping part
 Materials
-Materials in the garage part of Building X
 Mechanical ventilation
+Multiple floors
 Multiple parts
 Network of hydrants
 Normal operation of Building X
-Not constant
 Number of people
-Occupant density in the shopping part of Building X
 Occupants
-One part of the analysis
-Parking location of firefighters to fire location in residential part of Building X
-Parts
-Path
-Population in Building X
-Quick access and action by emergency units
+Provision of certain safety systems
+Relevant conditions
 Report
 Residential part
 Residential part of Building X
 Residential parts
 Residential parts of Building X
-Residential section
-Risk analysis
-Safe evacuation of occupants during a fire
+Risk analysis of Building X
 Safety measures
-Safety measures for fire scenarios
-Safety measures for the shopping part of Building X
+Safety measures for the residential part of Building X
+Safety measures in Building X
 Safety requirements
-Safety systems
-Safety systems for the residential part of Building X
-Section called shopping part
+Safety systems for Building X
+Safety systems required in the shopping part of Building X
 Sections
-Sections for Building X
+Separate section for details
+Shopping centre
 Shopping part
 Shopping part of Building X
 Shopping parts
 Shopping parts of Building X
-Shopping section
-Significant to firepower
-Specific safety measures
-Stop point to the location of the fire
+Significant firepower
+Some materials
 Subsequent sections
-These sections for each part of Building X
+These conditions
 Three sections
-To Emergency Access Roads from the residential part of Building X
-To emergency units from the residential part of Building X
-Varying number of people in different parts
+Throughout Building X
+Varying number of people
 Vertical staircases
+Vertical staircases in Building X
 Walkway
-Walkway for the emergency unit in the garage of Building X
-Walkway in emergency unit of Building X
-Walkway in the emergency unit of Building X
 Walkways
-Walkways on each floor
+Walkways in Building X
+Width of the emergency path in the garage
