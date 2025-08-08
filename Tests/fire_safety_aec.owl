@@ -8,13 +8,19 @@
 
 <owl:Ontology rdf:about="http://example.org/aec.owl"/>
 
-<owl:ObjectProperty rdf:about="#hasPart">
-  <rdfs:domain rdf:resource="#Infrastructure"/>
-  <rdfs:range rdf:resource="#Infrastructure"/>
+<owl:ObjectProperty rdf:about="#is_a">
+  <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:range rdf:resource="#AEC"/>
+  <rdfs:domain rdf:resource="#Phase"/>
+  <rdfs:range rdf:resource="#Design"/>
+  <rdfs:range rdf:resource="#Construction"/>
+  <rdfs:range rdf:resource="#Operation"/>
+  <rdfs:range rdf:resource="#Refurbishment"/>
+  <rdfs:range rdf:resource="#Removal"/>
 </owl:ObjectProperty>
 
-<owl:ObjectProperty rdf:about="#inPhase">
-  <rdfs:domain rdf:resource="#Infrastructure"/>
+<owl:ObjectProperty rdf:about="#isDivided">
+  <rdfs:domain rdf:resource="#AEC"/>
   <rdfs:range rdf:resource="#Phase"/>
 </owl:ObjectProperty>
 
@@ -87,40 +93,29 @@
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
+<owl:Class rdf:about="#State">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
 <owl:Class rdf:about="#Infrastructure">
-  <rdfs:subClassOf rdf:resource="#AEC"/>
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Function">
-  <rdfs:subClassOf rdf:resource="#AEC"/>
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Phase">
   <rdfs:subClassOf rdf:resource="#AEC"/>
 </owl:Class>
 
-<owl:Class rdf:about="#Architecture">
-  <rdfs:subClassOf rdf:resource="#Infrastructure"/>
-</owl:Class>
-
-<owl:Class rdf:about="#Engineering">
-  <rdfs:subClassOf rdf:resource="#Infrastructure"/>
+<owl:Class rdf:about="#Design">
+  <rdfs:subClassOf rdf:resource="#Phase"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Construction">
-  <rdfs:subClassOf rdf:resource="#Infrastructure"/>
-</owl:Class>
-
-<owl:Class rdf:about="#Traffic">
-  <rdfs:subClassOf rdf:resource="#Infrastructure"/>
-</owl:Class>
-
-<owl:Class rdf:about="#Building">
-  <rdfs:subClassOf rdf:resource="#Infrastructure"/>
-</owl:Class>
-
-<owl:Class rdf:about="#ConstructionPhase">
   <rdfs:subClassOf rdf:resource="#Phase"/>
+  <rdfs:subClassOf rdf:resource="#Design"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Operation">
@@ -131,20 +126,56 @@
   <rdfs:subClassOf rdf:resource="#Phase"/>
 </owl:Class>
 
-<owl:Class rdf:about="#Emergency">
+<owl:Class rdf:about="#Removal">
   <rdfs:subClassOf rdf:resource="#Phase"/>
 </owl:Class>
 
+<owl:Class rdf:about="#Architecture">
+  <rdfs:subClassOf rdf:resource="#Design"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Engineering">
+  <rdfs:subClassOf rdf:resource="#Design"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Traffic">
+  <rdfs:subClassOf rdf:resource="#Infrastructure"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Building">
+  <rdfs:subClassOf rdf:resource="#Infrastructure"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Normal">
+  <rdfs:subClassOf rdf:resource="#State"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Emergency">
+  <rdfs:subClassOf rdf:resource="#State"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Risk">
+  <rdfs:subClassOf rdf:resource="#Emergency"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Fire">
+  <rdfs:subClassOf rdf:resource="#Risk"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Accident">
+  <rdfs:subClassOf rdf:resource="#Risk"/>
+</owl:Class>
+
 <owl:Class rdf:about="#SafetySystem">
-  <rdfs:subClassOf rdf:resource="#AEC"/>
+  <rdfs:subClassOf rdf:resource="#Risk"/>
 </owl:Class>
 
 <owl:Class rdf:about="#SafetyEquipment">
-  <rdfs:subClassOf rdf:resource="#AEC"/>
+  <rdfs:subClassOf rdf:resource="#Risk"/>
 </owl:Class>
 
 <owl:Class rdf:about="#SafetyFunction">
-  <rdfs:subClassOf rdf:resource="#Function"/>
+  <rdfs:subClassOf rdf:resource="#Risk"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Evacuation">
